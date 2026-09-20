@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Systems Lab</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body><div aria-label="Loading Digital Systems Lab" id="app-loader">
+<div class="loader-orbit"><span>0</span><span>1</span><span>0</span><span>1</span></div>
+<div class="loader-brand">Digital Systems Lab</div>
+<div class="loader-tag">INITIALIZING DIGITAL LAB</div>
+<div class="loader-progress"><i></i></div>
+</div>
+<div class="app-shell">
+<aside class="sidebar">
+<div class="brand">
+<div class="brand-icon">⌘</div>
+<div>
+<h1>Digital Systems Lab</h1>
+<p>Learn • Explore • Build</p>
+</div>
+</div>
+<nav class="nav">
+<button class="nav-item active" data-section="home">⌂ <span>Home</span></button>
+<button class="nav-item" data-section="number-systems">▣ <span>Number Systems</span></button>
+<button class="nav-item" data-section="boolean">⌁ <span>Boolean Logic</span></button>
+<button class="nav-item" data-section="gates">◇ <span>Logic Gates</span></button>
+<button class="nav-item" data-section="gate-builder">⇄ <span>Gate Builder</span></button>
+<button class="nav-item" data-section="circuit-lab">⌁ <span>Visual Circuit Lab</span></button>
+<button class="nav-item" data-section="circuit-builder">⌘ <span>Circuit Builder</span></button>
+<button class="nav-item" data-section="combinational">⊞ <span>Combinational Circuits</span></button>
+<div class="nav-submenu" id="combNavSubmenu">
+<button class="nav-subitem" data-scroll-target="half-adder-card" data-section="combinational">▱ <span>Half Adder</span></button>
+<button class="nav-subitem" data-scroll-target="full-adder-card" data-section="combinational">▱ <span>Full Adder</span></button>
+<button class="nav-subitem" data-scroll-target="mux-card" data-section="combinational">▱ <span>2:1 Multiplexer</span></button>
+<button class="nav-subitem" data-scroll-target="mux4-card" data-section="combinational">▱ <span>4:1 Multiplexer</span></button>
+<button class="nav-subitem" data-scroll-target="decoder-card" data-section="combinational">▱ <span>2-to-4 Decoder</span></button>
+<button class="nav-subitem" data-scroll-target="encoder-card" data-section="combinational">▱ <span>4-to-2 Encoder</span></button>
+</div>
+<button class="nav-item" data-section="sequential">◫ <span>Sequential Circuits</span></button>
+<div class="nav-submenu" id="seqNavSubmenu">
+<button class="nav-subitem" data-scroll-target="seq-overview-card" data-section="sequential">▱ <span>Overview</span></button>
+<button class="nav-subitem" data-scroll-target="sr-latch-card" data-section="sequential">▱ <span>SR Latch</span></button>
+<button class="nav-subitem" data-scroll-target="gated-sr-card" data-section="sequential">▱ <span>Gated SR Latch</span></button>
+<button class="nav-subitem" data-scroll-target="d-latch-card" data-section="sequential">▱ <span>D Latch</span></button>
+<button class="nav-subitem" data-scroll-target="storage-elements-card" data-section="sequential">▱ <span>Storage Elements</span></button>
+<button class="nav-subitem" data-scroll-target="flipflop-overview-card" data-section="sequential">▱ <span>Flip-Flops</span></button>
+<button class="nav-subitem" data-scroll-target="clocked-sr-card" data-section="sequential">▱ <span>Clocked SR Flip-Flop</span></button>
+<button class="nav-subitem" data-scroll-target="jk-card" data-section="sequential">▱ <span>JK Flip-Flop</span></button>
+<button class="nav-subitem" data-scroll-target="d-ff-card" data-section="sequential">▱ <span>D Flip-Flop</span></button>
+<button class="nav-subitem" data-scroll-target="triggering-card" data-section="sequential">▱ <span>Triggering &amp; Clocking</span></button>
+</div>
+<button class="nav-item" data-section="registers">▤ <span>Registers</span></button>
+<div class="nav-submenu" id="regNavSubmenu">
+<button class="nav-subitem" data-scroll-target="register-overview-card" data-section="registers">▱ <span>Overview</span></button>
+<button class="nav-subitem" data-scroll-target="parallel-load-card" data-section="registers">▱ <span>Parallel Load</span></button>
+<button class="nav-subitem" data-scroll-target="shift-register-card" data-section="registers">▱ <span>Shift Register</span></button>
+<button class="nav-subitem" data-scroll-target="register-applications-card" data-section="registers">▱ <span>Applications</span></button>
+</div>
+<button class="nav-item" data-section="counters">◉ <span>Counters</span></button>
+<div class="nav-submenu" id="counterNavSubmenu">
+<button class="nav-subitem" data-scroll-target="counter-overview-card" data-section="counters">▱ <span>Overview</span></button>
+<button class="nav-subitem" data-scroll-target="ripple-counter-card" data-section="counters">▱ <span>Async / Ripple</span></button>
+<button class="nav-subitem" data-scroll-target="sync-counter-card" data-section="counters">▱ <span>Synchronous</span></button>
+<button class="nav-subitem" data-scroll-target="up-down-counter-card" data-section="counters">▱ <span>Up / Down</span></button>
+<button class="nav-subitem" data-scroll-target="mod-counter-card" data-section="counters">▱ <span>MOD-10</span></button>
+</div>
+</nav>
+<div class="sidebar-note">Small numbers<br/><strong>build big ideas.</strong></div>
+<div class="sidebar-footer">Offline • Educational Tool</div>
+</aside>
+<main class="main">
+<section class="home-section visible" id="home-section">
+<div class="home-hero">
+<div>
+<span class="home-kicker">DIGITAL SYSTEMS LAB</span>
+<h2>Learn. Practice. Visualize. Build.</h2>
+<p>An offline interactive laboratory for exploring Number Systems, Boolean Logic, Logic Gates, and Digital Circuits.</p>
+</div>
+<div class="home-hero-badge">
+<strong>From Bits to Bigger Ideas</strong>
+<span>Fatim al-matar</span>
+</div>
+</div>
+<div class="home-section-title">
+<div>
+<h3>Choose a Module</h3>
+<p>Select a topic from the sidebar to start learning and experimenting.</p>
+</div>
+</div>
+<div class="module-grid">
+<article class="module-card blue">
+<div class="module-icon">1010</div>
+<h4>Number Systems</h4><span class="module-ar">أنظمة الأعداد</span>
+<p>Convert between Binary, Decimal, Octal and Hexadecimal, with representations and step-by-step methods.</p>
+<button class="module-open" data-open-section="number-systems">Open →</button>
+</article>
+<article class="module-card green">
+<div class="module-icon">∧</div>
+<h4>Boolean Logic</h4><span class="module-ar">الجبر البولياني</span>
+<p>Expressions, Truth Tables, Boolean Laws, Simplification, SOP/POS and De Morgan transformations.</p>
+<button class="module-open" data-open-section="boolean">Open →</button>
+</article>
+<article class="module-card orange">
+<div class="module-icon">⊕</div>
+<h4>Logic Gates</h4><span class="module-ar">البوابات المنطقية</span>
+<p>AND, OR, NOT, NAND, NOR, XOR and XNOR with interactive inputs and truth tables.</p>
+<button class="module-open" data-open-section="gates">Open →</button>
+</article>
+<article class="module-card purple">
+<div class="module-icon">⇄</div>
+<h4>Gate Builder</h4><span class="module-ar">تحويل المعادلة إلى دائرة</span>
+<p>Enter a Boolean expression and inspect its equivalent gate-level structure and truth table.</p>
+<button class="module-open" data-open-section="gate-builder">Open →</button>
+</article>
+<article class="module-card green">
+<div class="module-icon">⌘</div>
+<h4>Circuit Builder</h4><span class="module-ar">بناء وربط الدوائر</span>
+<p>Choose components, place them on a visual canvas, connect signals, and test the circuit step by step.</p>
+<button class="module-open" data-open-section="circuit-builder">Open →</button>
+</article>
+<article class="module-card pink">
+<div class="module-icon">＋</div>
+<h4>Combinational Circuits</h4><span class="module-ar">الدوائر التوافقية</span>
+<p>Half Adder, Full Adder, 2:1 MUX, 4:1 MUX, 2-to-4 Decoder and 4-to-2 Encoder are ready.</p>
+<button class="module-open" data-open-section="combinational">Open →</button>
+</article>
+<article class="module-card blue">
+<div class="module-icon">D</div>
+<h4>Sequential Circuits</h4><span class="module-ar">الدوائر المتسلسلة</span>
+<p>Explore memory elements, latches and flip-flops where the previous state matters.</p>
+<button class="module-open" data-open-section="sequential">Open →</button>
+</article>
+<article class="module-card cyan">
+<div class="module-icon">▤</div>
+<h4>Registers</h4><span class="module-ar">السجلات</span>
+<p>Store binary data, load multiple bits in parallel, and shift data between flip-flops.</p>
+<button class="module-open" data-open-section="registers">Open →</button>
+</article>
+<article class="module-card purple">
+<div class="module-icon">01</div>
+<h4>Counters</h4><span class="module-ar">العدادات</span>
+<p>Asynchronous, synchronous, Up/Down and MOD-10 counters with interactive exploration.</p>
+<button class="module-open" data-open-section="counters">Open →</button>
+</article>
+</div>
+<div class="home-lower-grid">
+<section class="home-info-card">
+<div class="home-info-title">✦ Recent Updates</div>
+<ol>
+<li>Separated each module so its content stays isolated.</li>
+<li>Added interactive Logic Gates and Gate Builder.</li>
+<li>Added Half Adder and Full Adder under Combinational Circuits.</li>
+<li>Added 2-to-4 Decoder under Combinational Circuits.</li>
+<li>Added 4-to-2 Encoder under Combinational Circuits.</li>
+<li>Started Sequential Circuits with interactive SR and D latches.</li>
+<li>Added Registers with parallel load and shift-register exploration.</li>
+<li>Kept the project fully offline and organized for future modules.</li>
+</ol>
+</section>
+<section class="home-info-card">
+<div class="home-info-title">▤ How to Use</div>
+<ol>
+<li>Choose a module from the left sidebar.</li>
+<li>Change inputs and interact with the tools.</li>
+<li>Compare equations, truth tables and circuit structures.</li>
+<li>Practice step by step before moving to the next topic.</li>
+</ol>
+</section>
+</div>
+<div class="home-footer">Digital Systems Lab <span>•</span> © 2026 <span>•</span> Developed by Fatim al-matar</div>
+</section>
+<section class="number-systems-section" id="number-systems-section">
+<header class="topbar">
+<div>
+<h2>Number Systems Explorer</h2>
+<p>Convert, inspect and understand number representations.</p>
+</div>
+<div class="systems-legend">
+<span><i class="dot binary"></i>Binary (2)</span>
+<span><i class="dot octal"></i>Octal (8)</span>
+<span><i class="dot decimal"></i>Decimal (10)</span>
+<span><i class="dot hex"></i>Hexadecimal (16)</span>
+</div>
+</header>
+<section class="workspace">
+<div class="input-card">
+<div class="field">
+<label for="value">Enter a value</label>
+<input autocomplete="off" id="value" placeholder="e.g. 25, 11001, FF" spellcheck="false" value="25"/>
+<small class="error" id="error"></small>
+</div>
+<div class="field">
+<label for="fromSystem">From System</label>
+<select id="fromSystem">
+<option value="10">Decimal (10)</option>
+<option value="2">Binary (2)</option>
+<option value="8">Octal (8)</option>
+<option value="16">Hexadecimal (16)</option>
+</select>
+</div>
+<div class="field">
+<label for="toSystem">To System</label>
+<select id="toSystem">
+<option value="2">Binary (2)</option>
+<option value="10">Decimal (10)</option>
+<option value="8">Octal (8)</option>
+<option value="16">Hexadecimal (16)</option>
+</select>
+</div>
+<button class="icon-btn" id="swap" title="Swap systems">⇄</button>
+<div class="actions">
+<button class="primary" id="convert">↻ Convert</button>
+<button class="secondary" id="all">▥ Show All Conversions</button>
+<button class="secondary" id="steps">▤ Show Steps</button>
+<button class="secondary" id="reset">↶ Reset</button>
+</div>
+</div>
+<section class="results-section">
+<div class="section-title"><span>▥</span> Conversion Results</div>
+<div class="results-grid" id="results"></div>
+</section>
+<div class="lower-grid">
+<section class="steps-card">
+<div class="section-heading">
+<h3>Step-by-Step Conversion</h3>
+<span id="step-label">Decimal → Binary</span>
+</div>
+<div class="steps-list" id="stepsPanel"></div>
+</section>
+<section class="explanation-card">
+<div class="section-heading">
+<h3>Explanation</h3>
+<span class="bulb">●</span>
+</div>
+<div id="explanation"></div>
+</section>
+</div>
+</section>
+<section class="learning-card number-only">
+<div class="section-heading">
+<h3>Conversion Method</h3>
+<span id="method-badge">Decimal → Binary</span>
+</div>
+<div class="method-content" id="method-content"></div>
+</section>
+<section class="practice-card number-only">
+<div class="section-heading">
+<h3>Quick Practice</h3>
+<span>Test your understanding</span>
+</div>
+<div class="practice-grid">
+<div>
+<p id="practice-question">Convert 25 from Decimal to Binary.</p>
+<div class="practice-answer-row">
+<input autocomplete="off" id="practice-answer" placeholder="Your answer" spellcheck="false"/>
+<button class="primary" id="check-answer">Check</button>
+<button class="secondary" id="new-question">New</button>
+</div>
+<div class="practice-feedback" id="practice-feedback"></div>
+</div>
+<div class="practice-hint">
+<strong>Tip</strong>
+<p>Try the conversion yourself first, then use the main converter to verify your answer.</p>
+</div>
+</div>
+</section>
+<footer class="number-only">Digital Systems Lab <span>•</span> Number Systems Module <span>•</span> Offline Use</footer>
+</section>
+<section class="boolean-section" id="boolean-section">
+<div class="boolean-header">
+<div>
+<h2>Boolean Logic</h2>
+<p>Evaluate Boolean expressions and inspect their truth tables.</p>
+</div>
+<span class="module-badge">Module 02</span>
+</div>
+<div class="boolean-input-card">
+<div class="field boolean-expression-field">
+<label for="booleanExpression">Boolean Expression</label>
+<input autocomplete="off" id="booleanExpression" placeholder="Example: AB + C" spellcheck="false" value="AB + C"/>
+<small class="input-help">Use variables A–Z, + for OR, adjacency or · for AND, and ' for NOT.</small>
+<small class="error" id="booleanError"></small>
+</div>
+<div class="boolean-actions">
+<button class="primary" id="evaluateBoolean">Evaluate</button>
+<button class="secondary" id="generateTruthTable">Generate Truth Table</button>
+<button class="secondary" id="clearBoolean">Reset</button>
+</div>
+</div>
+<div class="boolean-result-row">
+<section class="boolean-card">
+<div class="section-heading">
+<h3>Variables &amp; Result</h3>
+<span>Live Evaluation</span>
+</div>
+<div class="variables-grid" id="booleanVariables"></div>
+<div class="boolean-final">
+<span>F =</span>
+<strong id="booleanResult">—</strong>
+</div>
+</section>
+<section class="boolean-card">
+<div class="section-heading">
+<h3>Expression Structure</h3>
+<span>Parsed Logic</span>
+</div>
+<div class="logic-structure" id="booleanStructure">
+<div class="structure-placeholder">Enter an expression and evaluate it.</div>
+</div>
+</section>
+</div>
+<section class="boolean-card truth-card">
+<div class="section-heading">
+<h3>Truth Table</h3>
+<span id="truthTableInfo">—</span>
+</div>
+<div class="truth-table-wrap" id="truthTable">
+<div class="structure-placeholder">Your truth table will appear here.</div>
+</div>
+</section>
+<section class="boolean-card laws-card">
+<div class="section-heading">
+<h3>Boolean Laws</h3>
+<span>Core Rules</span>
+</div>
+<div class="laws-grid">
+<article class="law-item">
+<span class="law-name">Commutative</span>
+<code>A + B = B + A</code>
+<code>AB = BA</code>
+</article>
+<article class="law-item">
+<span class="law-name">Associative</span>
+<code>(A + B) + C = A + (B + C)</code>
+<code>(AB)C = A(BC)</code>
+</article>
+<article class="law-item">
+<span class="law-name">Distributive</span>
+<code>A(B + C) = AB + AC</code>
+<code>A + BC = (A + B)(A + C)</code>
+</article>
+<article class="law-item">
+<span class="law-name">Useful Rules</span>
+<code>A + AB = A</code>
+<code>AA = A</code>
+<code>A + 1 = 1</code>
+<code>A·1 = A</code>
+</article>
+</div>
+</section>
+<section class="boolean-card simplify-card">
+<div class="section-heading">
+<h3>Boolean Simplification</h3>
+<span>Step by Step</span>
+</div>
+<div class="simplify-input-row">
+<div class="field boolean-expression-field">
+<label for="simplifyExpression">Expression to simplify</label>
+<input autocomplete="off" id="simplifyExpression" placeholder="Example: A + AB" spellcheck="false" value="A + AB"/>
+<small class="input-help">Try examples from the lecture: A + AB, A + A'B, or AB + A'C + BC.</small>
+<small class="error" id="simplifyError"></small>
+</div>
+<button class="primary" id="simplifyBoolean">Simplify</button>
+</div>
+<div class="simplify-result" id="simplifyResult">
+<div class="structure-placeholder">Enter an expression and press Simplify.</div>
+</div>
+</section>
+<section class="boolean-card forms-card">
+<div class="section-heading">
+<h3>SOP / POS &amp; Canonical Forms</h3>
+<span>From Truth Table</span>
+</div>
+<div class="forms-input-row">
+<div class="field boolean-expression-field">
+<label for="formsExpression">Boolean Expression</label>
+<input autocomplete="off" id="formsExpression" placeholder="Example: AB + C" spellcheck="false" value="AB + C"/>
+<small class="input-help">The module generates the canonical SOP and POS from the truth table.</small>
+<small class="error" id="formsError"></small>
+</div>
+<button class="primary" id="generateForms">Generate Forms</button>
+</div>
+<div class="forms-result" id="formsResult">
+<div class="structure-placeholder">Enter an expression and generate its forms.</div>
+</div>
+</section>
+<section class="boolean-card demorgan-card">
+<div class="section-heading">
+<h3>De Morgan's Theorem</h3>
+<span>Transformation Steps</span>
+</div>
+<div class="forms-input-row">
+<div class="field boolean-expression-field">
+<label for="demorganExpression">Expression</label>
+<input autocomplete="off" id="demorganExpression" placeholder="Example: (A + B)' or (AB)''" spellcheck="false" value="(A + B)'"/>
+<small class="input-help">Applies De Morgan transformations to NOT over OR / AND, plus double negation.</small>
+<small class="error" id="demorganError"></small>
+</div>
+<button class="primary" id="applyDeMorgan">Apply Theorem</button>
+</div>
+<div class="forms-result" id="demorganResult">
+<div class="structure-placeholder">Enter an expression and apply the theorem.</div>
+</div>
+</section>
+<section class="boolean-card boolean-practice-card">
+<div class="section-heading">
+<h3>Boolean Practice</h3>
+<span>Quick Check</span>
+</div>
+<div class="boolean-practice-grid">
+<div>
+<p id="booleanQuestion">For F = AB + C, what is F when A=1, B=0, C=1?</p>
+<div class="practice-answer-row">
+<button class="bool-answer" data-answer="0">0</button>
+<button class="bool-answer" data-answer="1">1</button>
+</div>
+<div class="practice-feedback" id="booleanFeedback"></div>
+</div>
+<div class="practice-hint">
+<strong>Tip</strong>
+<p>Change the variables in the expression above and compare the result with the truth table.</p>
+</div>
+</div>
+</section>
+</section>
+<section class="gates-section" id="gates-section">
+<div class="boolean-header">
+<div>
+<h2>Logic Gates</h2>
+<p>Change the inputs and watch the gate output update instantly.</p>
+</div>
+<span class="module-badge">Module 03</span>
+</div>
+<div class="gate-controls-card">
+<div class="field">
+<label for="gateSelect">Gate</label>
+<select id="gateSelect">
+<option value="AND">AND</option>
+<option value="OR">OR</option>
+<option value="NOT">NOT</option>
+<option value="NAND">NAND</option>
+<option value="NOR">NOR</option>
+<option value="XOR">XOR</option>
+<option value="XNOR">XNOR</option>
+</select>
+</div>
+<div class="gate-inputs">
+<div class="gate-toggle"><span>A</span><button class="bit-toggle" data-value="0" id="gateA">0</button></div>
+<div class="gate-toggle" id="gateBWrap"><span>B</span><button class="bit-toggle" data-value="0" id="gateB">0</button></div>
+</div>
+</div>
+<section class="gate-visual-card">
+<div class="section-heading"><h3>Interactive Gate</h3><span id="gateFormula">F = A · B</span></div>
+<div class="gate-diagram">
+<div class="gate-wire input-wire"><span>A</span><i id="wireA">0</i></div>
+<div class="gate-wire input-wire" id="wireBWrap"><span>B</span><i id="wireB">0</i></div>
+<div class="gate-shape" id="gateShape"><span id="gateName">AND</span></div>
+<div class="gate-wire output-wire"><span>F</span><i id="gateOutput">0</i></div>
+</div>
+<div class="gate-meaning" id="gateMeaning">Output is 1 only when both inputs are 1.</div>
+</section>
+<section class="gate-truth-card">
+<div class="section-heading"><h3>Truth Table</h3><span id="gateTruthTitle">AND</span></div>
+<div class="gate-truth-table" id="gateTruthTable"></div>
+</section>
+<section class="gate-practice-card">
+<div class="section-heading"><h3>Gate Practice</h3><span>Quick Check</span></div>
+<p id="gatePracticeQuestion">For AND: A = 1, B = 0. What is F?</p>
+<div class="practice-options" id="gatePracticeOptions">
+<button data-answer="0">0</button><button data-answer="1">1</button>
+</div>
+<div class="practice-feedback" id="gatePracticeFeedback"></div>
+</section>
+</section>
+<section class="combinational-section" id="combinational-section">
+<div class="module-pagebar" data-pagebar="combinational-section"><div class="pagebar-left"><span class="pagebar-kicker">MODULE</span><strong>Combinational Circuits</strong><span class="pagebar-current" data-page-current="">Overview</span></div><div class="pagebar-right"><button class="page-nav-btn" data-page-prev="" type="button">← Previous</button><span class="page-count" data-page-count="">1 / 1</span><button class="page-nav-btn" data-page-next="" type="button">Next →</button></div></div><div class="boolean-header">
+<div>
+<h2>Combinational Circuits</h2>
+<p>Build and understand circuits whose outputs depend only on the current inputs.</p>
+</div>
+<span class="module-badge">Adders + MUX + Encoder</span>
+</div>
+<section class="comb-card half-adder-card" data-page-group="half-adder" data-page-label="Half Adder">
+<div class="section-heading"><h3>Half Adder</h3><span>2 Inputs • 2 Outputs</span></div>
+<p class="comb-intro">Adds two single-bit binary values A and B. It produces a Sum and a Carry.</p>
+<div class="half-adder-controls">
+<div class="ha-input"><span>A</span><button class="bit-toggle" data-value="0" id="haA">0</button></div>
+<div class="ha-plus">+</div>
+<div class="ha-input"><span>B</span><button class="bit-toggle" data-value="0" id="haB">0</button></div>
+</div>
+<div class="ha-circuit">
+<div class="ha-input-wire"><span>A</span><i id="haWireA">0</i></div>
+<div class="ha-input-wire"><span>B</span><i id="haWireB">0</i></div>
+<div class="ha-gates">
+<div class="ha-gate-box"><strong>XOR</strong><small>Sum</small></div>
+<div class="ha-gate-box"><strong>AND</strong><small>Carry</small></div>
+</div>
+<div class="ha-outputs">
+<div><span>Sum (S)</span><b id="haSum">0</b></div>
+<div><span>Carry (C)</span><b id="haCarry">0</b></div>
+</div>
+</div>
+<div class="ha-equations">
+<div><span>Sum</span><strong>S = A ⊕ B</strong></div>
+<div><span>Carry</span><strong>C = A · B</strong></div>
+</div>
+</section>
+<section class="comb-card" data-page-group="half-adder" data-page-label="Half Adder">
+<div class="section-heading"><h3>Truth Table</h3><span>Half Adder</span></div>
+<div class="ha-truth-table">
+<div class="ha-row ha-head"><span>A</span><span>B</span><span>Sum</span><span>Carry</span></div>
+<div class="ha-row"><span>0</span><span>0</span><span>0</span><span>0</span></div>
+<div class="ha-row"><span>0</span><span>1</span><span>1</span><span>0</span></div>
+<div class="ha-row"><span>1</span><span>0</span><span>1</span><span>0</span></div>
+<div class="ha-row"><span>1</span><span>1</span><span>0</span><span>1</span></div>
+</div>
+</section>
+<section class="comb-card" data-page-group="half-adder" data-page-label="Half Adder">
+<div class="section-heading"><h3>Quick Check</h3><span>Test your understanding</span></div>
+<p>If A = 1 and B = 1, what are the outputs?</p>
+<div class="ha-answer-options" id="haPracticeOptions">
+<button data-carry="0" data-sum="0">S=0, C=0</button>
+<button data-carry="0" data-sum="1">S=1, C=0</button>
+<button data-carry="1" data-sum="0">S=0, C=1</button>
+<button data-carry="1" data-sum="1">S=1, C=1</button>
+</div>
+<div class="practice-feedback" id="haPracticeFeedback"></div>
+</section>
+<section class="comb-card full-adder-card" data-page-group="full-adder" data-page-label="Full Adder">
+<div class="section-heading"><h3>Full Adder</h3><span>3 Inputs • 2 Outputs</span></div>
+<p class="comb-intro">Adds A, B, and a Carry-in from the previous stage. It produces Sum and Carry-out.</p>
+<div class="full-adder-controls">
+<div class="ha-input"><span>A</span><button class="bit-toggle" data-value="0" id="faA">0</button></div>
+<div class="ha-input"><span>B</span><button class="bit-toggle" data-value="0" id="faB">0</button></div>
+<div class="ha-input"><span>Cin</span><button class="bit-toggle" data-value="0" id="faCin">0</button></div>
+</div>
+<div class="fa-circuit">
+<div class="fa-inputs">
+<div class="ha-input-wire"><span>A</span><i id="faWireA">0</i></div>
+<div class="ha-input-wire"><span>B</span><i id="faWireB">0</i></div>
+<div class="ha-input-wire"><span>Cin</span><i id="faWireCin">0</i></div>
+</div>
+<div class="fa-gates">
+<div class="ha-gate-box"><strong>XOR</strong><small>A ⊕ B</small></div>
+<div class="ha-gate-box"><strong>AND</strong><small>A · B</small></div>
+<div class="ha-gate-box"><strong>XOR</strong><small>Sum</small></div>
+<div class="ha-gate-box"><strong>AND</strong><small>(A ⊕ B) · Cin</small></div>
+<div class="ha-gate-box"><strong>OR</strong><small>Carry-out</small></div>
+</div>
+<div class="fa-outputs">
+<div><span>Sum (S)</span><b id="faSum">0</b></div>
+<div><span>Carry-out (Cout)</span><b id="faCarry">0</b></div>
+</div>
+</div>
+<div class="ha-equations fa-equations">
+<div><span>Sum</span><strong>S = A ⊕ B ⊕ Cin</strong></div>
+<div><span>Carry-out</span><strong>Cout = AB + ACin + BCin</strong></div>
+</div>
+</section>
+<section class="comb-card" data-page-group="full-adder" data-page-label="Full Adder">
+<div class="section-heading"><h3>Truth Table</h3><span>Full Adder</span></div>
+<div class="ha-truth-table">
+<div class="fa-row fa-head"><span>A</span><span>B</span><span>Cin</span><span>Sum</span><span>Cout</span></div>
+<div class="fa-row"><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span></div>
+<div class="fa-row"><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span></div>
+<div class="fa-row"><span>0</span><span>1</span><span>0</span><span>1</span><span>0</span></div>
+<div class="fa-row"><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span></div>
+<div class="fa-row"><span>1</span><span>0</span><span>0</span><span>1</span><span>0</span></div>
+<div class="fa-row"><span>1</span><span>0</span><span>1</span><span>0</span><span>1</span></div>
+<div class="fa-row"><span>1</span><span>1</span><span>0</span><span>0</span><span>1</span></div>
+<div class="fa-row"><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span></div>
+</div>
+</section>
+<section class="comb-card" data-page-group="full-adder" data-page-label="Full Adder">
+<div class="section-heading"><h3>Quick Check</h3><span>Full Adder</span></div>
+<p>If A = 1, B = 1, and Cin = 1, what are the outputs?</p>
+<div class="ha-answer-options" id="faPracticeOptions">
+<button data-carry="0" data-sum="0">S=0, Cout=0</button>
+<button data-carry="0" data-sum="1">S=1, Cout=0</button>
+<button data-carry="1" data-sum="0">S=0, Cout=1</button>
+<button data-carry="1" data-sum="1">S=1, Cout=1</button>
+</div>
+<div class="practice-feedback" id="faPracticeFeedback"></div>
+</section>
+<section class="comb-card mux-card" data-page-group="mux-2to1" data-page-label="2:1 Multiplexer" id="mux-card">
+<div class="section-heading"><h3>2:1 Multiplexer (MUX)</h3><span>2 Data Inputs • 1 Select • 1 Output</span></div>
+<p class="comb-intro">A 2:1 MUX selects one of two data inputs and routes the selected value to the output.</p>
+<div class="mux-controls">
+<div class="mux-input"><span>D0</span><button class="bit-toggle" data-value="0" id="muxD0">0</button></div>
+<div class="mux-input"><span>D1</span><button class="bit-toggle" data-value="0" id="muxD1">0</button></div>
+<div class="mux-input select-input"><span>S</span><button class="bit-toggle" data-value="0" id="muxS">0</button></div>
+</div>
+<div class="mux-circuit">
+<div class="mux-data-inputs">
+<div><span>D0</span><i id="muxWireD0">0</i></div>
+<div><span>D1</span><i id="muxWireD1">0</i></div>
+<div><span>S</span><i id="muxWireS">0</i></div>
+</div>
+<div class="mux-box">
+<strong>2:1 MUX</strong>
+<small id="muxSelected">S = 0 → D0 selected</small>
+</div>
+<div class="mux-output"><span>Y</span><b id="muxOutput">0</b></div>
+</div>
+<div class="mux-equation">
+<div><span>Boolean Equation</span><strong>Y = S′D0 + SD1</strong></div>
+<div><span>Current Selection</span><strong id="muxSelectionText">D0</strong></div>
+</div>
+</section>
+<section class="comb-card" data-page-group="mux-2to1" data-page-label="2:1 Multiplexer">
+<div class="section-heading"><h3>Truth Table</h3><span>2:1 MUX</span></div>
+<div class="mux-truth-table">
+<div class="mux-row mux-head"><span>S</span><span>D0</span><span>D1</span><span>Y</span></div>
+<div class="mux-row"><span>0</span><span>0</span><span>0</span><span>0</span></div>
+<div class="mux-row"><span>0</span><span>0</span><span>1</span><span>0</span></div>
+<div class="mux-row"><span>0</span><span>1</span><span>0</span><span>1</span></div>
+<div class="mux-row"><span>0</span><span>1</span><span>1</span><span>1</span></div>
+<div class="mux-row"><span>1</span><span>0</span><span>0</span><span>0</span></div>
+<div class="mux-row"><span>1</span><span>0</span><span>1</span><span>1</span></div>
+<div class="mux-row"><span>1</span><span>1</span><span>0</span><span>0</span></div>
+<div class="mux-row"><span>1</span><span>1</span><span>1</span><span>1</span></div>
+</div>
+</section>
+<section class="comb-card" data-page-group="mux-2to1" data-page-label="2:1 Multiplexer">
+<div class="section-heading"><h3>Quick Check</h3><span>2:1 MUX</span></div>
+<p>If S = 1, D0 = 0 and D1 = 1, what is Y?</p>
+<div class="ha-answer-options" id="muxPracticeOptions">
+<button data-answer="0">Y = 0</button>
+<button data-answer="1">Y = 1</button>
+</div>
+<div class="practice-feedback" id="muxPracticeFeedback"></div>
+</section>
+<section class="comb-card mux4-card" data-page-group="mux-4to1" data-page-label="4:1 Multiplexer" id="mux4-card">
+<div class="section-heading"><h3>4:1 Multiplexer (MUX)</h3><span>4 Data Inputs • 2 Select • 1 Output</span></div>
+<p class="comb-intro">A 4:1 MUX selects one of four data inputs using two select lines. It can be understood as two 2:1 MUX stages feeding a final 2:1 MUX.</p>
+<div class="mux4-controls">
+<div class="mux-input"><span>D0</span><button class="bit-toggle" data-value="0" id="mux4D0">0</button></div>
+<div class="mux-input"><span>D1</span><button class="bit-toggle" data-value="0" id="mux4D1">0</button></div>
+<div class="mux-input"><span>D2</span><button class="bit-toggle" data-value="0" id="mux4D2">0</button></div>
+<div class="mux-input"><span>D3</span><button class="bit-toggle" data-value="0" id="mux4D3">0</button></div>
+<div class="mux-input select-input"><span>S1</span><button class="bit-toggle" data-value="0" id="mux4S1">0</button></div>
+<div class="mux-input select-input"><span>S0</span><button class="bit-toggle" data-value="0" id="mux4S0">0</button></div>
+</div>
+<div class="mux4-diagram">
+<div class="mux4-stage">
+<div class="mux4-mini"><span>D0</span><span>D1</span><strong>2:1 MUX</strong><small>select S0</small><b id="mux4StageA">0</b></div>
+<div class="mux4-mini"><span>D2</span><span>D3</span><strong>2:1 MUX</strong><small>select S0</small><b id="mux4StageB">0</b></div>
+</div>
+<div class="mux4-final"><strong>2:1 MUX</strong><small>select S1</small><b id="mux4Output">0</b><span>Y</span></div>
+</div>
+<div class="mux-equation mux4-equation">
+<div><span>Boolean Equation</span><strong>Y = S1′S0′D0 + S1′S0D1 + S1S0′D2 + S1S0D3</strong></div>
+<div><span>Selected Input</span><strong id="mux4SelectionText">D0</strong></div>
+</div>
+</section>
+<section class="comb-card" data-page-group="mux-4to1" data-page-label="4:1 Multiplexer">
+<div class="section-heading"><h3>Truth Table</h3><span>4:1 MUX</span></div>
+<div class="mux4-truth-table">
+<div class="mux4-row mux4-head"><span>S1</span><span>S0</span><span>Selected</span><span>Y</span></div>
+<div class="mux4-row"><span>0</span><span>0</span><span>D0</span><span>D0</span></div>
+<div class="mux4-row"><span>0</span><span>1</span><span>D1</span><span>D1</span></div>
+<div class="mux4-row"><span>1</span><span>0</span><span>D2</span><span>D2</span></div>
+<div class="mux4-row"><span>1</span><span>1</span><span>D3</span><span>D3</span></div>
+</div>
+<p class="mux4-note">The selected data input can be 0 or 1; the select lines determine which input is routed to Y.</p>
+</section>
+<section class="comb-card" data-page-group="mux-4to1" data-page-label="4:1 Multiplexer">
+<div class="section-heading"><h3>Quick Check</h3><span>4:1 MUX</span></div>
+<p>If S1 = 1 and S0 = 0, which data input is selected?</p>
+<div class="ha-answer-options" id="mux4PracticeOptions">
+<button data-answer="D0">D0</button><button data-answer="D1">D1</button><button data-answer="D2">D2</button><button data-answer="D3">D3</button>
+</div>
+<div class="practice-feedback" id="mux4PracticeFeedback"></div>
+</section>
+<section class="comb-card decoder-card" data-page-group="decoder-2to4" data-page-label="2-to-4 Decoder" id="decoder-card">
+<div class="section-heading"><h3>2-to-4 Decoder</h3><span>2 Inputs • 4 Outputs</span></div>
+<p class="comb-intro">A 2-to-4 Decoder takes two binary inputs and activates exactly one of four outputs for each input combination.</p>
+<div class="decoder-controls">
+<div class="decoder-input"><span>A1</span><button class="bit-toggle" data-value="0" id="decA1">0</button></div>
+<div class="decoder-input"><span>A0</span><button class="bit-toggle" data-value="0" id="decA0">0</button></div>
+</div>
+<div class="decoder-diagram">
+<div class="decoder-input-lines">
+<div><span>A1</span><i id="decWireA1">0</i></div>
+<div><span>A0</span><i id="decWireA0">0</i></div>
+</div>
+<div class="decoder-logic">
+<div class="decoder-inverter"><strong>NOT</strong><small>A1′</small></div>
+<div class="decoder-inverter"><strong>NOT</strong><small>A0′</small></div>
+<div class="decoder-gates">
+<div class="decoder-gate"><strong>AND</strong><small>D0 = A1′A0′</small><b id="decD0Diagram">0</b></div>
+<div class="decoder-gate"><strong>AND</strong><small>D1 = A1′A0</small><b id="decD1Diagram">0</b></div>
+<div class="decoder-gate"><strong>AND</strong><small>D2 = A1A0′</small><b id="decD2Diagram">0</b></div>
+<div class="decoder-gate"><strong>AND</strong><small>D3 = A1A0</small><b id="decD3Diagram">0</b></div>
+</div>
+</div>
+<div class="decoder-outputs">
+<div><span>D0</span><b id="decD0">0</b></div>
+<div><span>D1</span><b id="decD1">0</b></div>
+<div><span>D2</span><b id="decD2">0</b></div>
+<div><span>D3</span><b id="decD3">0</b></div>
+</div>
+</div>
+<div class="decoder-equations">
+<div><span>D0</span><strong>D0 = A1′ · A0′</strong></div>
+<div><span>D1</span><strong>D1 = A1′ · A0</strong></div>
+<div><span>D2</span><strong>D2 = A1 · A0′</strong></div>
+<div><span>D3</span><strong>D3 = A1 · A0</strong></div>
+</div>
+</section>
+<section class="comb-card" data-page-group="decoder-2to4" data-page-label="2-to-4 Decoder">
+<div class="section-heading"><h3>Truth Table</h3><span>2-to-4 Decoder</span></div>
+<div class="decoder-truth-table">
+<div class="decoder-row decoder-head"><span>A1</span><span>A0</span><span>D0</span><span>D1</span><span>D2</span><span>D3</span></div>
+<div class="decoder-row"><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span></div>
+<div class="decoder-row"><span>0</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span></div>
+<div class="decoder-row"><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span></div>
+<div class="decoder-row"><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span></div>
+</div>
+<p class="decoder-note">For every input combination, exactly one decoder output is active (1).</p>
+</section>
+<section class="comb-card" data-page-group="decoder-2to4" data-page-label="2-to-4 Decoder">
+<div class="section-heading"><h3>Quick Check</h3><span>2-to-4 Decoder</span></div>
+<p>If A1 = 1 and A0 = 0, which output is active?</p>
+<div class="ha-answer-options" id="decoderPracticeOptions">
+<button data-answer="D0">D0</button><button data-answer="D1">D1</button><button data-answer="D2">D2</button><button data-answer="D3">D3</button>
+</div>
+<div class="practice-feedback" id="decoderPracticeFeedback"></div>
+</section>
+<section class="comb-card encoder-card" data-page-group="encoder-4to2" data-page-label="4-to-2 Encoder" id="encoder-card">
+<div class="section-heading"><h3>4-to-2 Encoder</h3><span>4 Inputs • 2 Outputs</span></div>
+<p class="comb-intro">A 4-to-2 Encoder performs the inverse operation of a decoder: one active input is converted into its 2-bit binary code.</p>
+<div class="encoder-controls">
+<div class="encoder-input"><span>D0</span><button class="bit-toggle" data-value="1" id="encD0">1</button></div>
+<div class="encoder-input"><span>D1</span><button class="bit-toggle" data-value="0" id="encD1">0</button></div>
+<div class="encoder-input"><span>D2</span><button class="bit-toggle" data-value="0" id="encD2">0</button></div>
+<div class="encoder-input"><span>D3</span><button class="bit-toggle" data-value="0" id="encD3">0</button></div>
+</div>
+<div class="encoder-diagram">
+<div class="encoder-input-lines">
+<div><span>D0</span><i id="encWireD0">1</i></div>
+<div><span>D1</span><i id="encWireD1">0</i></div>
+<div><span>D2</span><i id="encWireD2">0</i></div>
+<div><span>D3</span><i id="encWireD3">0</i></div>
+</div>
+<div class="encoder-logic">
+<div class="encoder-gate"><strong>OR</strong><small>A0 = D1 + D3</small></div>
+<div class="encoder-gate"><strong>OR</strong><small>A1 = D2 + D3</small></div>
+</div>
+<div class="encoder-outputs">
+<div><span>A1</span><b id="encA1">0</b></div>
+<div><span>A0</span><b id="encA0">0</b></div>
+<div class="encoder-code"><span>Binary Code</span><strong id="encCode">00</strong></div>
+</div>
+</div>
+<div class="encoder-equations">
+<div><span>A0</span><strong>A0 = D1 + D3</strong></div>
+<div><span>A1</span><strong>A1 = D2 + D3</strong></div>
+</div>
+<p class="encoder-note">Only one input should be 1 at a time, as specified in the course example.</p>
+</section>
+<section class="comb-card" data-page-group="encoder-4to2" data-page-label="4-to-2 Encoder">
+<div class="section-heading"><h3>Truth Table</h3><span>4-to-2 Encoder</span></div>
+<div class="encoder-truth-table">
+<div class="encoder-row encoder-head"><span>A1</span><span>A0</span><span>D0</span><span>D1</span><span>D2</span><span>D3</span></div>
+<div class="encoder-row"><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span></div>
+<div class="encoder-row"><span>0</span><span>1</span><span>0</span><span>1</span><span>0</span><span>0</span></div>
+<div class="encoder-row"><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span></div>
+<div class="encoder-row"><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span></div>
+</div>
+</section>
+<section class="comb-card" data-page-group="encoder-4to2" data-page-label="4-to-2 Encoder">
+<div class="section-heading"><h3>Quick Check</h3><span>4-to-2 Encoder</span></div>
+<p>If D2 = 1 and all other inputs are 0, what is the binary output?</p>
+<div class="ha-answer-options" id="encoderPracticeOptions">
+<button data-answer="00">00</button><button data-answer="01">01</button><button data-answer="10">10</button><button data-answer="11">11</button>
+</div>
+<div class="practice-feedback" id="encoderPracticeFeedback"></div>
+</section>
+</section>
+<section class="sequential-section" id="sequential-section">
+<div class="module-pagebar" data-pagebar="sequential-section"><div class="pagebar-left"><span class="pagebar-kicker">MODULE</span><strong>Sequential Circuits</strong><span class="pagebar-current" data-page-current="">Overview</span></div><div class="pagebar-right"><button class="page-nav-btn" data-page-prev="" type="button">← Previous</button><span class="page-count" data-page-count="">1 / 1</span><button class="page-nav-btn" data-page-next="" type="button">Next →</button></div></div><div class="boolean-header">
+<div>
+<h2>Sequential Circuits</h2>
+<p>Unlike combinational circuits, the output depends on the current inputs and the stored state from previous inputs.</p>
+</div>
+<span class="module-badge">Memory • Latches &amp; Flip-Flops</span>
+</div>
+<section class="seq-card seq-overview" data-page-group="seq-overview-card" data-page-label="What is a Sequential Circuit?" id="seq-overview-card">
+<div class="section-heading"><h3>What is a Sequential Circuit?</h3><span>Core Idea</span></div>
+<p class="comb-intro">A sequential circuit has memory, so its present output can depend on the current input, previous input, previous output, clock, and stored state.</p>
+<div class="seq-overview-grid">
+<div><strong>Combinational</strong><span>No memory. Output depends on the current inputs only.</span></div>
+<div><strong>Sequential</strong><span>Uses memory. Output depends on current inputs and previous state.</span></div>
+<div><strong>Why storage?</strong><span>To remember the last state of the circuit.</span></div>
+</div>
+<div class="seq-note">Storage elements are the basic building blocks used in sequential logic. The course identifies <strong>latches and flip-flops</strong> as storage elements.</div>
+</section>
+<section class="seq-card" data-page-group="sr-latch-card" data-page-label="SR Latch — Set / Reset" id="sr-latch-card">
+<div class="section-heading"><h3>SR Latch — Set / Reset</h3><span>1-bit Storage</span></div>
+<p class="comb-intro">The SR latch has two inputs: <strong>S</strong> (Set) and <strong>R</strong> (Reset), with outputs Q and Q′. It stores one bit.</p>
+<div class="seq-controls">
+<div class="seq-input"><span>S</span><button class="bit-toggle" data-value="0" id="srS">0</button></div>
+<div class="seq-input"><span>R</span><button class="bit-toggle" data-value="0" id="srR">0</button></div>
+</div>
+<div class="sr-state-panel">
+<div><span>Previous Q</span><b id="srPrevQ">0</b></div><div><span>Next Q</span><b id="srNextQ">0</b></div><div><span>Q′</span><b id="srNextQbar">1</b></div><div class="sr-status"><span>Status</span><strong id="srStatus">Hold</strong></div>
+</div>
+<div class="seq-equations">
+<div><span>00</span><strong>No Change</strong></div><div><span>01</span><strong>Reset → Q=0</strong></div><div><span>10</span><strong>Set → Q=1</strong></div><div><span>11</span><strong>Invalid</strong></div>
+</div>
+<div class="seq-note">⚠ S=1 and R=1 is the invalid condition described in the course because Set and Reset are active together.</div>
+</section>
+<section class="seq-card" data-page-group="sr-latch-card" data-page-label="SR Latch">
+<div class="section-heading"><h3>SR Characteristic Table</h3><span>Qn → Qn+1</span></div>
+<div class="seq-table">
+<div class="seq-row seq-head"><span>S</span><span>R</span><span>Qn+1</span><span>Meaning</span></div>
+<div class="seq-row"><span>0</span><span>0</span><span>Qn</span><span>No Change</span></div><div class="seq-row"><span>0</span><span>1</span><span>0</span><span>Reset</span></div><div class="seq-row"><span>1</span><span>0</span><span>1</span><span>Set</span></div><div class="seq-row"><span>1</span><span>1</span><span>X</span><span>Invalid / Not allowed</span></div>
+</div>
+</section>
+<section class="seq-card" data-page-group="gated-sr-card" data-page-label="Gated SR Latch" id="gated-sr-card">
+<div class="section-heading"><h3>Gated SR Latch</h3><span>Set / Reset + Enable</span></div>
+<p class="comb-intro">The gated SR latch adds an <strong>Enable (E)</strong> input. It responds to S and R only when Enable = 1. When Enable = 0, it holds the previous state.</p>
+<div class="seq-gated-grid">
+<div><strong>E = 0</strong><span>S and R are ignored → Q holds its previous state.</span></div>
+<div><strong>E = 1</strong><span>The latch responds according to the SR characteristic table.</span></div>
+</div>
+<div class="seq-table seq-small-table">
+<div class="seq-row seq-head"><span>E</span><span>S</span><span>R</span><span>Result</span></div>
+<div class="seq-row"><span>0</span><span>X</span><span>X</span><span>Hold</span></div><div class="seq-row"><span>1</span><span>0</span><span>0</span><span>Hold</span></div><div class="seq-row"><span>1</span><span>0</span><span>1</span><span>Reset</span></div><div class="seq-row"><span>1</span><span>1</span><span>0</span><span>Set</span></div><div class="seq-row"><span>1</span><span>1</span><span>1</span><span>Invalid</span></div>
+</div>
+</section>
+<section class="seq-card" data-page-group="d-latch-card" data-page-label="D Latch — Data Latch" id="d-latch-card">
+<div class="section-heading"><h3>D Latch — Data Latch</h3><span>Data • Enable</span></div>
+<p class="comb-intro">When Enable = 1, Q follows D. When Enable = 0, Q holds its previous value. The course notes that the D latch has no invalid state like the SR latch.</p>
+<div class="seq-controls">
+<div class="seq-input"><span>D</span><button class="bit-toggle" data-value="0" id="dLatchD">0</button></div><div class="seq-input"><span>Enable</span><button class="bit-toggle" data-value="0" id="dLatchE">0</button></div>
+</div>
+<div class="sr-state-panel">
+<div><span>Previous Q</span><b id="dPrevQ">0</b></div><div><span>Next Q</span><b id="dNextQ">0</b></div><div><span>Q′</span><b id="dNextQbar">1</b></div><div class="sr-status"><span>Status</span><strong id="dStatus">Hold</strong></div>
+</div>
+<div class="seq-note">Enable = 1 → Q = D   •   Enable = 0 → Q holds its previous value.</div>
+</section>
+<section class="seq-card" data-page-group="storage-elements-card" data-page-label="Storage Elements: Latches and Flip-Flops" id="storage-elements-card">
+<div class="section-heading"><h3>Storage Elements: Latches and Flip-Flops</h3><span>Course Concept</span></div>
+<p class="comb-intro">Latches and flip-flops are storage elements used as building blocks of sequential logic. A flip-flop is a bistable device that can store one bit and has complementary outputs Q and Q′.</p>
+<div class="seq-overview-grid">
+<div><strong>Latch</strong><span>Sensitive to its input level/control signal. Examples: SR Latch and D Latch.</span></div>
+<div><strong>Flip-Flop</strong><span>Changes state in synchronization with a clock, commonly at a clock edge.</span></div>
+<div><strong>Outputs</strong><span>Q = 1, Q′ = 0 is the set state; Q = 0, Q′ = 1 is the reset/clear state.</span></div>
+</div>
+<div class="seq-note">Next topic in the course sequence: Clocked/Edge-Triggered SR Flip-Flop, JK Flip-Flop, and D Flip-Flop.</div>
+</section>
+<section class="seq-card" data-page-group="flipflop-overview-card" data-page-label="Flip-Flops" id="flipflop-overview-card">
+<div class="section-heading"><h3>Flip-Flops</h3><span>1-bit Memory</span></div>
+<p class="comb-intro">A flip-flop is a bistable storage element that can store one bit of binary data. It has two stable states and complementary outputs <strong>Q</strong> and <strong>Q′</strong>.</p>
+<div class="seq-overview-grid">
+<div><strong>Set State</strong><span>Q = 1 and Q′ = 0.</span></div>
+<div><strong>Reset State</strong><span>Q = 0 and Q′ = 1.</span></div>
+<div><strong>Clocked Operation</strong><span>Flip-flops respond in synchronization with a clock, commonly at a clock edge.</span></div>
+</div>
+<div class="seq-note">The course describes flip-flops as improved storage elements that respond only on clock edges, helping avoid changes caused by continuous input changes.</div>
+</section>
+<section class="seq-card" data-page-group="clocked-sr-card" data-page-label="Clocked S-R Flip-Flop" id="clocked-sr-card">
+<div class="section-heading"><h3>Clocked S-R Flip-Flop</h3><span>S • R • CLK</span></div>
+<p class="comb-intro">The clocked S-R flip-flop synchronizes state changes with a clock pulse. The inputs are sampled when the clock event occurs.</p>
+<div class="seq-controls">
+<div class="seq-input"><span>S</span><button class="bit-toggle" data-value="0" id="srFfS">0</button></div>
+<div class="seq-input"><span>R</span><button class="bit-toggle" data-value="0" id="srFfR">0</button></div>
+<button class="clock-btn" id="srFfClock">↑ Clock</button>
+</div>
+<div class="sr-state-panel">
+<div><span>Q</span><b id="srFfQ">0</b></div><div><span>Q′</span><b id="srFfQbar">1</b></div><div><span>Clock Events</span><b id="srFfClocks">0</b></div><div class="sr-status"><span>Status</span><strong id="srFfStatus">Waiting for clock</strong></div>
+</div>
+<div class="seq-table">
+<div class="seq-row seq-head"><span>S</span><span>R</span><span>Qn+1</span><span>Meaning</span></div>
+<div class="seq-row"><span>0</span><span>0</span><span>Qn</span><span>No Change</span></div><div class="seq-row"><span>0</span><span>1</span><span>0</span><span>Reset</span></div><div class="seq-row"><span>1</span><span>0</span><span>1</span><span>Set</span></div><div class="seq-row"><span>1</span><span>1</span><span>X</span><span>Not allowed</span></div>
+</div>
+<div class="seq-note">Press <strong>↑ Clock</strong> to apply the selected S and R values. The S=1, R=1 condition remains not allowed.</div>
+</section>
+<section class="seq-card" data-page-group="jk-card" data-page-label="J-K Flip-Flop" id="jk-card">
+<div class="section-heading"><h3>J-K Flip-Flop</h3><span>Set • Reset • Toggle</span></div>
+<p class="comb-intro">The J-K flip-flop has two inputs. According to the course, all input combinations are valid; J corresponds to Set and K corresponds to Reset.</p>
+<div class="seq-controls">
+<div class="seq-input"><span>J</span><button class="bit-toggle" data-value="0" id="jkJ">0</button></div>
+<div class="seq-input"><span>K</span><button class="bit-toggle" data-value="0" id="jkK">0</button></div>
+<button class="clock-btn" id="jkClock">↑ Clock</button>
+</div>
+<div class="sr-state-panel">
+<div><span>Q</span><b id="jkQ">0</b></div><div><span>Q′</span><b id="jkQbar">1</b></div><div><span>Clock Events</span><b id="jkClocks">0</b></div><div class="sr-status"><span>Status</span><strong id="jkStatus">Waiting for clock</strong></div>
+</div>
+<div class="seq-table">
+<div class="seq-row seq-head"><span>J</span><span>K</span><span>Qn+1</span><span>Meaning</span></div>
+<div class="seq-row"><span>0</span><span>0</span><span>Qn</span><span>No Change</span></div><div class="seq-row"><span>0</span><span>1</span><span>0</span><span>Reset</span></div><div class="seq-row"><span>1</span><span>0</span><span>1</span><span>Set</span></div><div class="seq-row"><span>1</span><span>1</span><span>Q̅n</span><span>Toggle</span></div>
+</div>
+</section>
+<section class="seq-card" data-page-group="d-ff-card" data-page-label="D Flip-Flop" id="d-ff-card">
+<div class="section-heading"><h3>D Flip-Flop</h3><span>D • CLK</span></div>
+<p class="comb-intro">The edge-triggered D flip-flop has inputs <strong>D</strong> and <strong>Clock</strong>. On the rising edge (↑) or falling edge (↓), the course states that <strong>Q = D</strong>. At other times, Q holds its value.</p>
+<div class="seq-controls">
+<div class="seq-input"><span>D</span><button class="bit-toggle" data-value="0" id="dFfD">0</button></div>
+<button class="clock-btn" id="dFfClock">↑ Clock Edge</button>
+</div>
+<div class="sr-state-panel">
+<div><span>Q</span><b id="dFfQ">0</b></div><div><span>Q′</span><b id="dFfQbar">1</b></div><div><span>Clock Edges</span><b id="dFfClocks">0</b></div><div class="sr-status"><span>Status</span><strong id="dFfStatus">Waiting for edge</strong></div>
+</div>
+<div class="seq-note">At a clock edge → <strong>Q = D</strong>. Between clock edges → Q holds its current value.</div>
+</section>
+<section class="seq-card" data-page-group="triggering-card" data-page-label="Triggering &amp; Clocking" id="triggering-card">
+<div class="section-heading"><h3>Triggering &amp; Clocking</h3><span>Level vs Edge</span></div>
+<p class="comb-intro">A trigger is a control signal used to initiate an action. The course distinguishes level triggering from edge triggering.</p>
+<div class="seq-overview-grid">
+<div><strong>Level Trigger</strong><span>An action is initiated on a high or low level.</span></div>
+<div><strong>Edge Trigger</strong><span>An action is initiated on a positive or negative transition.</span></div>
+<div><strong>Clock</strong><span>A series of pulses (square wave) used to synchronize actions; triggers are generally taken from its edge.</span></div>
+</div>
+<div class="seq-table seq-small-table">
+<div class="seq-row seq-head"><span>Trigger</span><span>Meaning</span><span>Example</span></div>
+<div class="seq-row"><span>High / Low level</span><span>Action depends on the level</span><span>Level-triggered latch</span></div>
+<div class="seq-row"><span>Positive edge ↑</span><span>Action at rising transition</span><span>Edge-triggered FF</span></div>
+<div class="seq-row"><span>Negative edge ↓</span><span>Action at falling transition</span><span>Edge-triggered FF</span></div>
+</div>
+</section>
+<section class="seq-card" data-page-group="sr-latch-card" data-page-label="SR Latch">
+<div class="section-heading"><h3>Quick Check</h3><span>Test your understanding</span></div>
+<p>If S = 1 and R = 0 in an SR latch, what happens to Q?</p>
+<div class="ha-answer-options" id="srPracticeOptions"><button data-answer="0">Q = 0</button><button data-answer="1">Q = 1</button><button data-answer="hold">No Change</button><button data-answer="invalid">Invalid</button></div>
+<div class="practice-feedback" id="srPracticeFeedback"></div>
+</section>
+</section>
+<section class="counters-section" id="counters-section">
+<div class="module-pagebar" data-pagebar="counters-section"><div class="pagebar-left"><span class="pagebar-kicker">MODULE</span><strong>Counters</strong><span class="pagebar-current" data-page-current="">Overview</span></div><div class="pagebar-right"><button class="page-nav-btn" data-page-prev="" type="button">← Previous</button><span class="page-count" data-page-count="">1 / 1</span><button class="page-nav-btn" data-page-next="" type="button">Next →</button></div></div><div class="boolean-header">
+<div>
+<h2>Counters</h2>
+<p>A counter is a sequential circuit that moves through a defined sequence of binary states when clock pulses are applied.</p>
+</div>
+<span class="module-badge">State • Clock • MOD</span>
+</div>
+<section class="counter-card" data-page-group="counter-overview-card" data-page-label="What is a Counter?" id="counter-overview-card">
+<div class="section-heading"><h3>What is a Counter?</h3><span>Core Idea</span></div>
+<p class="comb-intro">A counter advances from one binary state to the next with clock pulses. The course covers asynchronous (ripple), synchronous, up/down, and MOD counters.</p>
+<div class="counter-overview-grid">
+<div><strong>Asynchronous</strong><span>Flip-flops do not receive the same clock edge; the change ripples through the stages.</span></div>
+<div><strong>Synchronous</strong><span>The stages operate from a common clock.</span></div>
+<div><strong>MOD-N</strong><span>The counter has N distinct states before the sequence repeats.</span></div>
+</div>
+<div class="counter-state-strip"><span>Example 3-bit sequence</span><strong>000 → 001 → 010 → 011 → 100 → 101 → 110 → 111 → 000</strong></div>
+</section>
+<section class="counter-card" data-page-group="ripple-counter-card" data-page-label="3-bit Asynchronous / Ripple Counter" id="ripple-counter-card">
+<div class="section-heading"><h3>3-bit Asynchronous / Ripple Counter</h3><span>Up Counter</span></div>
+<p class="comb-intro">Use the clock button to advance the 3-bit counter. The displayed sequence follows the binary up-count example from the course.</p>
+<div class="counter-controls"><button class="clock-btn" id="rippleClock">↑ Clock Pulse</button><button class="secondary-btn" id="rippleReset">Reset</button></div>
+<div class="counter-display"><div><span>Q₂ Q₁ Q₀</span><b id="rippleValue">000</b></div><div><span>Decimal State</span><b id="rippleDecimal">0</b></div><div><span>Clock Pulses</span><b id="rippleCount">0</b></div><div class="sr-status"><span>Status</span><strong id="rippleStatus">Ready</strong></div></div>
+<div class="counter-sequence" id="rippleSequence"></div>
+</section>
+<section class="counter-card" data-page-group="sync-counter-card" data-page-label="3-bit Synchronous Counter" id="sync-counter-card">
+<div class="section-heading"><h3>3-bit Synchronous Counter</h3><span>Common Clock</span></div>
+<p class="comb-intro">In this interactive view, all three stages advance together on the same clock event. Compare the state sequence with the ripple counter.</p>
+<div class="counter-controls"><button class="clock-btn" id="syncClock">↑ Common Clock</button><button class="secondary-btn" id="syncReset">Reset</button></div>
+<div class="counter-display"><div><span>Q₂ Q₁ Q₀</span><b id="syncValue">000</b></div><div><span>Decimal State</span><b id="syncDecimal">0</b></div><div><span>Clock Pulses</span><b id="syncCount">0</b></div><div class="sr-status"><span>Status</span><strong id="syncStatus">Ready</strong></div></div>
+<div class="counter-note">Key idea: the defining feature shown here is the common clock applied to the stages.</div>
+</section>
+<section class="counter-card" data-page-group="up-down-counter-card" data-page-label="3-bit Up / Down Counter" id="up-down-counter-card">
+<div class="section-heading"><h3>3-bit Up / Down Counter</h3><span>Direction Control</span></div>
+<p class="comb-intro">Select a direction, then apply clock pulses. Up counting increases the binary state; down counting decreases it and wraps around.</p>
+<div class="counter-controls"><div class="counter-direction"><span>Direction</span><button class="bit-toggle" data-value="1" id="counterDirection">UP</button></div><button class="clock-btn" id="upDownClock">↑ Clock Pulse</button><button class="secondary-btn" id="upDownReset">Reset</button></div>
+<div class="counter-display"><div><span>Direction</span><b id="upDownDirectionLabel">UP</b></div><div><span>Q₂ Q₁ Q₀</span><b id="upDownValue">000</b></div><div><span>Decimal State</span><b id="upDownDecimal">0</b></div><div><span>Clock Pulses</span><b id="upDownCount">0</b></div></div>
+</section>
+<section class="counter-card" data-page-group="mod-counter-card" data-page-label="MOD-10 / Decade Counter" id="mod-counter-card">
+<div class="section-heading"><h3>MOD-10 / Decade Counter</h3><span>10 States</span></div>
+<p class="comb-intro">A MOD-10 counter cycles through ten states, 0 through 9, then returns to 0. This interactive version displays the decimal sequence directly.</p>
+<div class="counter-controls"><button class="clock-btn" id="modClock">↑ Clock Pulse</button><button class="secondary-btn" id="modReset">Reset</button></div>
+<div class="counter-display"><div><span>State</span><b id="modValue">0</b></div><div><span>Sequence</span><b>0 → 1 → 2 → … → 9 → 0</b></div><div><span>Clock Pulses</span><b id="modCount">0</b></div><div class="sr-status"><span>Status</span><strong id="modStatus">Ready</strong></div></div>
+<div class="counter-note">MOD-10 means the counter has 10 distinct states before the sequence repeats.</div>
+</section>
+<section class="counter-card" data-page-group="sync-counter-card" data-page-label="Synchronous">
+<div class="section-heading"><h3>Quick Check</h3><span>Counters</span></div>
+<p>A 3-bit binary up counter is currently at <strong>110</strong>. What is the next state after one clock pulse?</p>
+<div class="ha-answer-options" id="counterPracticeOptions"><button data-answer="101">101</button><button data-answer="111">111</button><button data-answer="000">000</button><button data-answer="110">110</button></div>
+<div class="practice-feedback" id="counterPracticeFeedback"></div>
+</section>
+</section>
+<section class="registers-section" id="registers-section">
+<div class="module-pagebar" data-pagebar="registers-section"><div class="pagebar-left"><span class="pagebar-kicker">MODULE</span><strong>Registers</strong><span class="pagebar-current" data-page-current="">Overview</span></div><div class="pagebar-right"><button class="page-nav-btn" data-page-prev="" type="button">← Previous</button><span class="page-count" data-page-count="">1 / 1</span><button class="page-nav-btn" data-page-next="" type="button">Next →</button></div></div><div class="boolean-header">
+<div>
+<h2>Registers</h2>
+<p>A register is a group of flip-flops used to store binary data. Each flip-flop stores one bit and the group shares a common clock.</p>
+</div>
+<span class="module-badge">Storage • Load • Shift</span>
+</div>
+<section class="reg-card" data-page-group="register-overview-card" data-page-label="What is a Register?" id="register-overview-card">
+<div class="section-heading"><h3>What is a Register?</h3><span>Core Idea</span></div>
+<p class="comb-intro">The course defines a register as a group of flip-flops used to store binary information. An <strong>n-bit register</strong> uses <strong>n flip-flops</strong>, because each flip-flop stores one bit.</p>
+<div class="seq-overview-grid">
+<div><strong>4-bit Register</strong><span>4 flip-flops → 4 bits of stored data.</span></div>
+<div><strong>8-bit Register</strong><span>8 flip-flops → 8 bits of stored data.</span></div>
+<div><strong>Purpose</strong><span>Temporarily store, shift, or transfer binary data.</span></div>
+</div>
+<div class="seq-table seq-small-table">
+<div class="seq-row seq-head"><span>Type</span><span>Description</span><span>Example Use</span></div>
+<div class="seq-row"><span>Parallel Register</span><span>All bits loaded or read simultaneously.</span><span>Fast data storage</span></div>
+<div class="seq-row"><span>Serial Register</span><span>Bits loaded one by one.</span><span>Communication systems</span></div>
+<div class="seq-row"><span>Shift Register</span><span>Data shifts between neighboring flip-flops.</span><span>Data transfer / conversion</span></div>
+<div class="seq-row"><span>Universal Shift Register</span><span>Can shift left/right and load data in parallel.</span><span>Complex data handling</span></div>
+</div>
+</section>
+<section class="reg-card" data-page-group="parallel-load-card" data-page-label="Register with Parallel Load" id="parallel-load-card">
+<div class="section-heading"><h3>Register with Parallel Load</h3><span>Load • Hold • Clock</span></div>
+<p class="comb-intro">When <strong>Load = 1</strong>, all input bits are copied into the register on a clock pulse. When <strong>Load = 0</strong>, the previous values are retained.</p>
+<div class="reg-controls">
+<div class="reg-bit-group"><span>D₃</span><button class="bit-toggle reg-input" data-value="1" id="regD3">1</button></div>
+<div class="reg-bit-group"><span>D₂</span><button class="bit-toggle reg-input" data-value="0" id="regD2">0</button></div>
+<div class="reg-bit-group"><span>D₁</span><button class="bit-toggle reg-input" data-value="1" id="regD1">1</button></div>
+<div class="reg-bit-group"><span>D₀</span><button class="bit-toggle reg-input" data-value="1" id="regD0">1</button></div>
+<div class="reg-bit-group"><span>Load</span><button class="bit-toggle" data-value="1" id="regLoad">1</button></div>
+<button class="clock-btn" id="regClock">↑ Load on Clock</button>
+</div>
+<div class="register-display">
+<div><span>Input D₃…D₀</span><b id="regInputValue">1011</b></div>
+<div><span>Q₃…Q₀</span><b id="regOutputValue">0000</b></div>
+<div><span>Clock Pulses</span><b id="regClockCount">0</b></div>
+<div class="sr-status"><span>Status</span><strong id="regStatus">Ready</strong></div>
+</div>
+<div class="seq-table seq-small-table">
+<div class="seq-row seq-head"><span>Load</span><span>Clock</span><span>D₃…D₀</span><span>Q₃…Q₀</span></div>
+<div class="seq-row"><span>0</span><span>↑</span><span>X X X X</span><span>Hold</span></div>
+<div class="seq-row"><span>1</span><span>↑</span><span>1 0 1 1</span><span>1 0 1 1</span></div>
+<div class="seq-row"><span>1</span><span>↑</span><span>0 0 1 0</span><span>0 0 1 0</span></div>
+</div>
+</section>
+<section class="reg-card" data-page-group="shift-register-card" data-page-label="4-bit Shift Register" id="shift-register-card">
+<div class="section-heading"><h3>4-bit Shift Register</h3><span>Serial Input</span></div>
+<p class="comb-intro">A shift register moves the binary information held in each cell to its neighboring cell in a selected direction. The course example shifts serial input into a 4-bit register.</p>
+<div class="reg-controls">
+<div class="reg-bit-group"><span>Serial Input</span><button class="bit-toggle" data-value="1" id="shiftInput">1</button></div>
+<button class="clock-btn" id="shiftClock">↑ Shift Clock</button>
+<button class="secondary-btn" id="shiftReset">Reset</button>
+</div>
+<div class="shift-register-visual">
+<div class="shift-cell"><span>Q₃</span><b id="shiftQ3">0</b></div>
+<div class="shift-arrow">←</div>
+<div class="shift-cell"><span>Q₂</span><b id="shiftQ2">0</b></div>
+<div class="shift-arrow">←</div>
+<div class="shift-cell"><span>Q₁</span><b id="shiftQ1">0</b></div>
+<div class="shift-arrow">←</div>
+<div class="shift-cell"><span>Q₀</span><b id="shiftQ0">0</b></div>
+</div>
+<div class="register-display">
+<div><span>Stored Value</span><b id="shiftValue">0000</b></div>
+<div><span>Clock Pulses</span><b id="shiftCount">0</b></div>
+<div class="sr-status"><span>Status</span><strong id="shiftStatus">Ready</strong></div>
+</div>
+<div class="seq-table seq-small-table">
+<div class="seq-row seq-head"><span>Clock</span><span>Serial Input</span><span>Q₃Q₂Q₁Q₀</span></div>
+<div class="seq-row"><span>1</span><span>1</span><span>0001</span></div>
+<div class="seq-row"><span>2</span><span>0</span><span>0010</span></div>
+<div class="seq-row"><span>3</span><span>1</span><span>0101</span></div>
+<div class="seq-row"><span>4</span><span>1</span><span>1011</span></div>
+</div>
+<div class="seq-note">Course example: serial input sequence <strong>1011</strong> produces <strong>1011</strong> after four clock pulses.</div>
+</section>
+<section class="reg-card" data-page-group="register-applications-card" data-page-label="Applications of Registers" id="register-applications-card">
+<div class="section-heading"><h3>Applications of Registers</h3><span>Where they are used</span></div>
+<div class="seq-overview-grid">
+<div><strong>Temporary Storage</strong><span>Hold binary data for a short period.</span></div>
+<div><strong>Data Transfer</strong><span>Transfer data between CPU and peripherals.</span></div>
+<div><strong>Data Conversion</strong><span>Serial-to-parallel or parallel-to-serial conversion.</span></div>
+<div><strong>Time Delay</strong><span>Use stored stages to delay binary information.</span></div>
+</div>
+</section>
+<section class="reg-card" data-page-group="parallel-load-card" data-page-label="Parallel Load">
+<div class="section-heading"><h3>Quick Check</h3><span>Test your understanding</span></div>
+<p>If Load = 0 and a clock pulse occurs, what happens to the register outputs?</p>
+<div class="ha-answer-options" id="registerPracticeOptions"><button data-answer="hold">They hold their previous values</button><button data-answer="load">They copy the D inputs</button></div>
+<div class="practice-feedback" id="registerPracticeFeedback"></div>
+</section>
+</section>
+<section class="circuit-builder-section" id="circuit-builder-section">
+<div class="boolean-header">
+<div>
+<h2>Interactive Circuit Builder</h2>
+<p>Place digital components on the canvas, connect their ports, and watch the signal propagate.</p>
+</div>
+<span class="module-badge">Place • Connect • Test</span>
+</div>
+<section class="builder-card">
+<div class="builder-toolbar">
+<div class="builder-palette">
+<span class="tool-label">Add component</span>
+<button class="builder-add" data-add-type="INPUT">＋ Input</button>
+<button class="builder-add" data-add-type="AND">＋ AND</button>
+<button class="builder-add" data-add-type="OR">＋ OR</button>
+<button class="builder-add" data-add-type="NOT">＋ NOT</button>
+<button class="builder-add" data-add-type="XOR">＋ XOR</button>
+<button class="builder-add" data-add-type="NAND">＋ NAND</button>
+<button class="builder-add" data-add-type="NOR">＋ NOR</button>
+<button class="builder-add" data-add-type="XNOR">＋ XNOR</button>
+<button class="builder-add" data-add-type="DFF">＋ D Flip-Flop</button>
+<button class="builder-add" data-add-type="JKFF">＋ JK Flip-Flop</button>
+<button class="builder-add" data-add-type="REG">＋ 4-bit Register</button>
+<button class="builder-add" data-add-type="OUTPUT">＋ Output</button>
+</div>
+<div class="builder-actions">
+<button class="secondary-btn" id="builderConnect">Connect selected</button>
+<button class="secondary-btn" id="builderDelete">Delete selected</button>
+<button class="secondary-btn" id="builderDeleteWire">Delete selected wire</button>
+<button class="secondary-btn" id="builderClock">Clock Pulse</button>
+<button class="secondary-btn" id="builderTest">Test Circuit</button>
+<button class="secondary-btn" id="builderReset">Clear Canvas</button>
+</div>
+</div>
+<div class="builder-help">
+<span><b>1.</b> Add components.</span>
+<span><b>2.</b> Drag them to arrange the circuit.</span>
+<span><b>3.</b> Click a source port, then a destination port.</span>
+<span><b>4.</b> Use <strong>Test Circuit</strong> to propagate 0/1 signals.</span>
+<span><b>5.</b> Use <strong>Clock Pulse</strong> for D/JK Flip-Flops and the 4-bit Register.</span>
+</div>
+<div class="builder-canvas" id="builderCanvas">
+<svg aria-hidden="true" class="builder-wires" id="builderWires"></svg>
+<div class="builder-empty" id="builderEmpty">
+<strong>Your canvas is empty</strong>
+<span>Add an Input, Gate, Flip-Flop, Register or Output to start building.</span>
+</div>
+</div>
+<div class="builder-status-grid">
+<div><span>Selected</span><b id="builderSelected">None</b></div>
+<div><span>Connections</span><b id="builderConnections">0</b></div>
+<div><span>Last test</span><b id="builderStatus">Ready</b></div>
+<div><span>Clock</span><b id="builderClockCount">0</b></div>
+</div>
+</section>
+<section class="builder-card">
+<div class="section-heading"><h3>Truth Table</h3><span>Automatic circuit check</span></div>
+<p class="builder-note">For circuits with up to three INPUT components, the builder can test every 0/1 combination and show the final OUTPUT value.</p>
+<div class="builder-truth-actions"><button class="primary-btn" id="builderTruthTable">Generate Truth Table</button></div>
+<div class="builder-truth-wrap" id="builderTruthTableWrap"></div>
+</section>
+<section class="builder-card">
+<div class="section-heading"><h3>How Connections Work</h3><span>Signal direction</span></div>
+<div class="builder-rules">
+<div><em>OUT</em><span>Every component can expose an output signal.</span></div>
+<div><em>IN</em><span>A destination receives the signal from the selected source.</span></div>
+<div><em>CLK</em><span>D/JK Flip-Flops and the 4-bit Register update their stored state on a Clock Pulse.</span></div>
+<div><em>LED</em><span>Output components display the final propagated value.</span></div>
+</div>
+</section>
+</section>
+<section class="circuit-lab-section" id="circuit-lab-section">
+<div class="boolean-header">
+<div>
+<h2>Visual Circuit Lab</h2>
+<p>See how Gates, Flip-Flops, and Registers can be connected into one working digital path.</p>
+</div>
+<span class="module-badge">Draw • Connect • Clock</span>
+</div>
+<section class="circuit-card" id="visual-circuit-card">
+<div class="section-heading"><h3>Integrated Circuit</h3><span>AND → D Flip-Flop → 4-bit Register → Output</span></div>
+<p class="comb-intro">Toggle the inputs, clock the D flip-flop, then store its output in the register. The wires change state visually so you can follow the signal path.</p>
+<div class="circuit-toolbar">
+<div class="circuit-tool-group">
+<span class="tool-label">Inputs</span>
+<button class="bit-toggle" data-value="0" id="labInputA">A = 0</button>
+<button class="bit-toggle" data-value="0" id="labInputB">B = 0</button>
+</div>
+<div class="circuit-tool-group">
+<span class="tool-label">Clock</span>
+<button class="clock-btn" id="labDffClock">↑ D Flip-Flop Clock</button>
+<button class="clock-btn" id="labRegClock">↑ Register Clock</button>
+</div>
+<button class="secondary-btn" id="labReset">Reset Circuit</button>
+</div>
+<div class="circuit-canvas" id="circuitCanvas">
+<svg aria-hidden="true" class="circuit-wires" preserveaspectratio="none" viewbox="0 0 1200 430">
+<path class="wire" d="M115 125 H230" id="wireA"></path>
+<path class="wire" d="M115 300 H230" id="wireB"></path>
+<path class="wire" d="M330 212 H430" id="wireAndD"></path>
+<path class="wire" d="M555 212 H665" id="wireDffReg"></path>
+<path class="wire" d="M875 212 H1030" id="wireRegOut"></path>
+</svg>
+<div class="circuit-node input-node node-a">
+<span class="node-kind">INPUT</span><strong>A</strong><b id="labAValue">0</b>
+</div>
+<div class="circuit-node input-node node-b">
+<span class="node-kind">INPUT</span><strong>B</strong><b id="labBValue">0</b>
+</div>
+<div class="circuit-node gate-node node-and">
+<span class="node-kind">GATE</span><strong>AND</strong><small>Y = A · B</small><b id="labAndValue">0</b>
+</div>
+<div class="circuit-node ff-node node-dff">
+<span class="node-kind">MEMORY</span><strong>D FLIP-FLOP</strong><small>D captures on clock ↑</small><div>Q = <b id="labDffValue">0</b></div>
+</div>
+<div class="circuit-node reg-node node-reg">
+<span class="node-kind">STORAGE</span><strong>4-BIT REGISTER</strong><small>D₃ D₂ D₁ D₀</small><div>Q = <b id="labRegValue">0000</b></div>
+</div>
+<div class="circuit-node output-node node-out">
+<span class="node-kind">OUTPUT</span><strong>LED / BUS</strong><b id="labOutValue">0000</b>
+<div class="output-lights"><i></i><i></i><i></i><i></i></div>
+</div>
+</div>
+<div class="circuit-state-grid">
+<div><span>AND output</span><b id="labAndState">0</b></div>
+<div><span>D Flip-Flop Q</span><b id="labDffState">0</b></div>
+<div><span>Register Q₃…Q₀</span><b id="labRegState">0000</b></div>
+<div><span>Last action</span><b id="labStatus">Ready</b></div>
+</div>
+</section>
+<section class="circuit-card">
+<div class="section-heading"><h3>How the Connection Works</h3><span>Signal flow</span></div>
+<div class="connection-steps">
+<div><em>1</em><strong>A + B → AND</strong><span>The two input bits are processed by the AND gate.</span></div>
+<div><em>2</em><strong>AND → D</strong><span>The AND output is connected to the D input of the flip-flop.</span></div>
+<div><em>3</em><strong>Clock ↑ → Q</strong><span>A rising clock captures D and updates the flip-flop output Q.</span></div>
+<div><em>4</em><strong>Q → Register D₀</strong><span>The flip-flop output is stored as the least-significant register bit.</span></div>
+<div><em>5</em><strong>Register → Output</strong><span>The 4-bit stored value is shown on the output bus.</span></div>
+</div>
+</section>
+<section class="circuit-card">
+<div class="section-heading"><h3>Quick Experiment</h3><span>Try a signal path</span></div>
+<ol class="circuit-experiment">
+<li>Set <strong>A = 1</strong> and <strong>B = 1</strong>.</li>
+<li>Press <strong>D Flip-Flop Clock</strong> — Q should become 1.</li>
+<li>Press <strong>Register Clock</strong> — the register should become <strong>0001</strong>.</li>
+<li>Change the inputs and repeat to observe how the stored state changes.</li>
+</ol>
+</section>
+</section>
+<section class="gate-builder-section" id="gate-builder-section">
+<div class="boolean-header">
+<div>
+<h2>Expression → Logic Gates</h2>
+<p>Turn a Boolean expression into a gate-level structure.</p>
+</div>
+<span class="module-badge">Gate Builder</span>
+</div>
+<section class="gate-builder-card">
+<div class="section-heading"><h3>Boolean Expression</h3><span>Build the circuit</span></div>
+<div class="forms-input-row">
+<div class="field boolean-expression-field">
+<label for="gateBuilderExpression">Expression</label>
+<input autocomplete="off" id="gateBuilderExpression" placeholder="Example: AB + C" spellcheck="false" value="AB + C"/>
+<small class="input-help">Supported: + for OR, adjacency / · / * for AND, ' for NOT, and parentheses.</small>
+<small class="error" id="gateBuilderError"></small>
+</div>
+<button class="primary" id="buildGateCircuit">Build Circuit</button>
+</div>
+</section>
+<section class="gate-builder-card">
+<div class="section-heading"><h3>Gate-Level Structure</h3><span id="gateBuilderFormula">F = AB + C</span></div>
+<div class="gate-builder-diagram" id="gateBuilderDiagram"></div>
+<div class="gate-builder-steps" id="gateBuilderSteps"></div>
+</section>
+<section class="gate-builder-card">
+<div class="section-heading"><h3>Truth Table</h3><span>Same function, different representation</span></div>
+<div class="gate-builder-truth" id="gateBuilderTruth"></div>
+</section>
+</section>
+</main>
+</div>
+<script src="number-systems.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
